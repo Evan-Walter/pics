@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../index.css';
+import SearchBar from './SearchBar';
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
-    return <div>App</div>;
+    return (
+      <div className='ui container' style={{ marginTop: '10px' }}>
+        <SearchBar />
+      </div>
+    );
   }
 }
