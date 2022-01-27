@@ -4,19 +4,18 @@ import '../index.css';
 import SearchBar from './SearchBar';
 
 export default class App extends React.Component {
-  handleSearch(term) {
-    axios
+  async handleSearch(term) {
+    const res = await axios
       .get('https://api.unsplash.com/search/photos', {
         params: { query: term },
         headers: {
           Authorization:
             'Client-ID FkefCcB6TpHI654RjCohiAAQmoyI3gSxgHMK-w9vLWk',
         },
-      })
-      .then((res) => {
-        console.log(res.data.results);
       });
-  }
+
+      console.log(res.data.results);
+    }
 
   render() {
     return (
